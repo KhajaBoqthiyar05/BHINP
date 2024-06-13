@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-heading {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-list-items {
+            margin: 0 15px;
+        }
+
+        .menu-list-items a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://via.placeholder.com/1500') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        .intro {
+            max-width: 600px;
+        }
+
+        .intro-buttons .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .common-btn {
+            background-color: #2575fc;
+            color: #fff;
+        }
+
+        .ghost-btn {
+            background-color: transparent;
+            border: 2px solid #2575fc;
+            color: #2575fc;
+        }
+
+        .portfolio {
+            padding: 60px 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        .portfolio-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .my-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .my-col {
+            flex: 1 1 30%;
+            min-width: 250px;
+        }
+
+        .my-card {
+            background: #2575fc;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blue-text {
+            color: #2575fc;
+        }
+
+        .about {
+            padding: 60px 20px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services {
+            padding: 60px 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        .services-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger-icon {
+                font-size: 24px;
+            }
+
+            .cross-icon {
+                display: none;
+            }
+
+            .menu.open {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-list-items {
+                margin: 10px 0;
+            }
+
+            .hero {
+                padding: 20px;
+            }
+
+            .intro-buttons .btn {
+                width: 100%;
+            }
+
+            .my-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .my-col {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar header section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h2 class="logo-heading">Khaja Boqthiyar</h2>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars hamburger-icon"></i>
+                <i class="fas fa-times cross-icon"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items"><a class="links" href="#home">Home</a></li>
+                    <li class="menu-list-items"><a class="links" href="#portfolio">Portfolio</a></li>
+                    <li class="menu-list-items"><a class="links" href="#about">About</a></li>
+                    <li class="menu-list-items"><a class="links" href="#services">Services</a></li>
+                    <li class="menu-list-items"><a class="links" href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main hero banner -->
+    <section id="home" class="hero">
+        <div class="intro">
+            <div class="headings">
+                <h3 class="greet-heading">Hello, I'm</h3>
+                <h1 class="my-heading">Khaja Boqthiyar</h1>
+                <h4 class="sub-heading">A Software Engineer.</h4>
+            </div>
+            <div class="intro-buttons">
+                <button class="btn common-btn">Hire Me</button>
+                <button class="btn ghost-btn">Get Resume</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-heading">
+            <h1 class="my-heading text-center">Featured Portfolio</h1>
+        </div>
+        <div class="portfolio-content">
+            <div class="my-row">
+                <div class="my-col">
+                    <div class="my-card port-card">
+                        <h3 class="greet-heading">Web Design</h3>
+                        <p class="small-para">Designing</p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card port-card">
+                        <h3 class="greet-heading">Web Development</h3>
+                        <p class="small-para">Development</p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card port-card">
+                        <h3 class="greet-heading">SEO</h3>
+                        <p class="small-para">Optimization</p>
+                    </div>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-col">
+                    <div class="my-card port-card">
+                        <h3 class="greet-heading">Content Writing</h3>
+                        <p class="small-para">Writing</p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card port-card">
+                        <h3 class="greet-heading">WordPress Dev</h3>
+                        <p class="small-para">Content Management System</p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card port-card">
+                        <h3 class="greet-heading">Video Editing</h3>
+                        <p class="small-para">Editing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-text">
+            <h1 class="my-heading">About Me</h1>
+            <p class="lead-para">
+                I am a 21-year-old BE student at Neil Gogte Institute of Technology. I enjoy solving problems and making things pretty and easy to use. I cannot stop learning new things; the more, the better.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-heading">
+            <h1 class="my-heading text-center">My Services</h1>
+        </div>
+        <div class="services-content">
+            <div class="my-row">
+                <div class="my-col">
+                    <div class="my-card">
+                        <div class="icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="greet-heading blue-text">Web Design</h3>
+                        <p class="small-para">
+                            Web development refers to creating, building, and maintaining websites. It includes aspects such as web design, web publishing, web programming, and database management.
+                        </p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="greet-heading blue-text">Web Development</h3>
+                        <p class="small-para">
+                            Web development refers to creating, building, and maintaining websites. It includes aspects such as web design, web publishing, web programming, and database management.
+                        </p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card">
+                        <div class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="greet-heading blue-text">SEO</h3>
+                        <p class="small-para">
+                            Web development refers to creating, building, and maintaining websites. It includes aspects such as web design, web publishing, web programming, and database management.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-col">
+                    <div class="my-card">
+                        <div class="icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <h3 class="greet-heading blue-text">Content Writing</h3>
+                        <p class="small-para">
+                            Web development refers to creating, building, and maintaining websites. It includes aspects such as web design, web publishing, web programming, and database management.
+                        </p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card">
+                        <div class="icon">
+                            <i class="fab fa-wordpress-simple"></i>
+                        </div>
+                        <h3 class="greet-heading blue-text">WordPress Dev</h3>
+                        <p class="small-para">
+                            Web development refers to creating, building, and maintaining websites. It includes aspects such as web design, web publishing, web programming, and database management.
+                        </p>
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="my-card">
+                        <div class="icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="greet-heading blue-text">Video Editing</h3>
+                        <p class="small-para">
+                            Web development refers to creating, building, and maintaining websites. It includes aspects such as web design, web publishing, web programming, and database management.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
